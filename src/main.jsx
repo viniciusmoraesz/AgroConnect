@@ -31,7 +31,7 @@ const AppRouter = () => {
         <Route path="agricultor-dashboard" element={<AgricultorDashboard/>} />
         <Route path="especialista-dashboard" element={<ExpertDashboard/>} />
         <Route path="faq" element={<FAQPage/>} />
-        <Route path="main-page" element={<MainPage/>} />
+        <Route path="home" element={<MainPage/>} />
         <Route path="previsao-tempo" element={<WeatherForecast/>} />
         <Route path="tecnicas-agricolas" element={<AgriculturalTechniques/>} />
         <Route path="plano-crise" element={<CrisisActionPlan/>} />

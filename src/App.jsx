@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import Header from './Components/Header'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       flexDirection: 'column',
       fontFamily: "'Poppins', sans-serif"
     }}>
+      <Header />
       <Outlet />
     </div>
   );
