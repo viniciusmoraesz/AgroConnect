@@ -280,7 +280,7 @@ export default function MainPage() {
             </ForecastText>
           </WeatherDetails>
         </WeatherInfo>
-        <Button onClick={() => navigate('/previsao-detalhada')}>
+        <Button onClick={() => navigate('/dica-rapida')}>
           Dica Rápida do Dia
         </Button>
       </WelcomeSection>

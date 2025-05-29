@@ -17,6 +17,7 @@ import RiskMonitoring from './Components/RiskMonitoring';
 import AboutUs from './Components/AboutUs';
 import TalkWithSpecialist from './Components/TalkWithSpecialist';
 import Donations from './Components/Donations';
+import QuickTip from './Components/QuickTip';
 
 // Importar a fonte Poppins
 const link = document.createElement('link');
@@ -42,6 +43,7 @@ const AppRouter = () => {
         <Route path="sobre-nos" element={<AboutUs/>} />
         <Route path="fale-com-especialista" element={<TalkWithSpecialist/>} />
         <Route path="doacoes" element={<Donations/>} />
+        <Route path="dica-rapida" element={<QuickTip/>} />
       </Route>
     </Routes>
   );
