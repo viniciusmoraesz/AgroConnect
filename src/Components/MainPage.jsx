@@ -35,8 +35,8 @@ import {
   FaCloudRain, 
   FaCloudSun, 
   FaLeaf, 
-  FaStore, 
-  FaUsers,
+  FaExclamationTriangle,
+  FaChartLine,
   FaGlobeAmericas,
   FaCog,
   FaQuestionCircle,
@@ -56,14 +56,14 @@ const quickActions = [
     path: '/tecnicas-agricolas'
   },
   {
-    icon: <FaStore size={24} />,
-    title: 'Fornecedores Locais',
-    path: '/fornecedores'
+    icon: <FaExclamationTriangle size={24} />,
+    title: 'Plano de Ação de Crise',
+    path: '/plano-crise'
   },
   {
-    icon: <FaUsers size={24} />,
-    title: 'Rede de Agricultores',
-    path: '/rede'
+    icon: <FaChartLine size={24} />,
+    title: 'Monitoramento de Riscos',
+    path: '/monitoramento-riscos'
   }
 ];
 

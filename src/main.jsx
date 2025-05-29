@@ -10,6 +10,10 @@ import ExpertDashboard from './Components/EspecialistaDashboard';
 import FAQPage from './Components/FAQPage';
 import ContactPage from './Components/ContactPage';
 import MainPage from './Components/MainPage';
+import WeatherForecast from './Components/WeatherForecast';
+import AgriculturalTechniques from './Components/AgriculturalTechniques';
+import CrisisActionPlan from './Components/CrisisActionPlan';
+import RiskMonitoring from './Components/RiskMonitoring';
 
 // Importar a fonte Poppins
 const link = document.createElement('link');
@@ -28,6 +32,10 @@ const AppRouter = () => {
         <Route path="especialista-dashboard" element={<ExpertDashboard/>} />
         <Route path="faq" element={<FAQPage/>} />
         <Route path="main-page" element={<MainPage/>} />
+        <Route path="previsao-tempo" element={<WeatherForecast/>} />
+        <Route path="tecnicas-agricolas" element={<AgriculturalTechniques/>} />
+        <Route path="plano-crise" element={<CrisisActionPlan/>} />
+        <Route path="monitoramento-riscos" element={<RiskMonitoring/>} />
       </Route>
     </Routes>
   );
