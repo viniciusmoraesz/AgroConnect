@@ -123,7 +123,8 @@ export default function RegisterPage() {
     handleSubmit,
     formState: { errors },
     watch,
-    setValue
+    setValue,
+    reset
   } = useForm({
     resolver: yupResolver(schema),
     mode: 'onChange'

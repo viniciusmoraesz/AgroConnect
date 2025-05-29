@@ -18,6 +18,8 @@ import {
   FaTractor,
   FaWater
 } from 'react-icons/fa';
+
+import Footer from './Footer';
 import {
   Container,
   Header,
@@ -39,7 +41,6 @@ import {
   ResourceSection,
   ResourceList,
   ResourceLink,
-  Footer,
   DetailHeader,
   RiskTitleLarge,
   RiskMeta,
@@ -282,12 +283,6 @@ const RiskMonitoring = () => {
           </Button>
         </ContactCard>
 
-        <Footer>
-          <a href="#">Sobre Nós</a>
-          <a href="#">Ajuda</a>
-          <a href="#">Contato</a>
-          <a href="#">Configurações</a>
-        </Footer>
       </Container>
     );
   }
@@ -384,12 +379,7 @@ const RiskMonitoring = () => {
         </ResourceList>
       </ResourceSection>
 
-      <Footer>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Ajuda</a>
-        <a href="#">Contato</a>
-        <a href="#">Configurações</a>
-      </Footer>
+      <Footer />
     </Container>
   );
 };

@@ -13,10 +13,11 @@ import {
   HourlyForecast, 
   HourlyTable,
   AdditionalInfo,
-  Footer
 } from '../Styles/StyledWeatherForecast';
-import { FaArrowLeft, FaExclamationTriangle, FaSun, FaCloudRain, FaCloud, FaCloudSun, FaCloudMoon, FaCloudMoonRain, FaCloudShowersHeavy } from 'react-icons/fa';
+import { FaArrowLeft, FaExclamationTriangle } from 'react-icons/fa';
 import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy, WiDaySunnyOvercast, WiNightClear, WiNightCloudy, WiNightRain } from 'react-icons/wi';
+
+import Footer from './Footer';
 
 const WeatherForecast = () => {
   const navigate = useNavigate();
@@ -198,12 +199,8 @@ const WeatherForecast = () => {
           </div>
         ))}
       </AdditionalInfo>
-
-      {/* Footer */}
-      <Footer>
-        <button>Relatar Problema com Previsão</button>
-        <span>Fonte dos Dados: Serviço Meteorológico Nacional</span>
-      </Footer>
+      
+      <Footer />
     </WeatherContainer>
   );
 };

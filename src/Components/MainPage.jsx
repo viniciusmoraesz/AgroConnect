@@ -8,6 +8,16 @@ import {
   MenuButton,
   NotificationButton,
   NotificationBadge,
+  NotificationPopup,
+  NotificationHeader,
+  NotificationTitle,
+  NotificationList,
+  NotificationItem,
+  NotificationContent,
+  NotificationTime,
+  NotificationActions,
+  MarkAsReadButton,
+  MarkAllRead,
   WelcomeSection,
   WeatherInfo,
   WeatherIcon,
@@ -25,10 +35,10 @@ import {
   ResilienceSection,
   Button,
   OutlineButton,
-  Footer,
-  FooterLinks,
   FloatingActionButton
 } from '../Styles/StyledMainPage';
+
+import Footer from './Footer';
 
 import { 
   FaBars, 
@@ -83,10 +93,97 @@ const news = [
   }
 ];
 
+// Função para gerar data aleatória nos últimos 7 dias
+const getRandomDate = () => {
+  const randomDays = Math.floor(Math.random() * 7);
+  const date = new Date();
+  date.setDate(date.getDate() - randomDays);
+  return date;
+};
+
+// Dados de notificações de exemplo
+const sampleNotifications = [
+  {
+    id: 1,
+    title: 'Alerta de Chuva Forte',
+    message: 'Previsão de chuva intensa para amanhã na sua região. Recomendamos adiar a aplicação de defensivos.',
+    time: getRandomDate(),
+    read: false
+  },
+  {
+    id: 2,
+    title: 'Dica de Manejo',
+    message: 'Período ideal para adubação de cobertura na cultura do milho. Aproveite o clima úmido!',
+    time: getRandomDate(),
+    read: false
+  },
+  {
+    id: 3,
+    title: 'Atualização do Sistema',
+    message: 'Nova atualização disponível! Agora você pode acompanhar mais culturas no seu perfil.',
+    time: getRandomDate(),
+    read: false
+  },
+  {
+    id: 4,
+    title: 'Webinar Gratuito',
+    message: 'Participe do nosso webinar sobre técnicas de irrigação sustentável. Dia 05/06 às 19h.',
+    time: getRandomDate(),
+    read: true
+  },
+  {
+    id: 5,
+    title: 'Dica de Plantio',
+    message: 'Condições climáticas ideais para plantio de feijão na próxima semana.',
+    time: getRandomDate(),
+    read: true
+  }
+];
+
 export default function MainPage() {
   const navigate = useNavigate();
-  const [notifications] = useState(3); // Simula notificações não lidas
   const [showTooltip, setShowTooltip] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState(sampleNotifications);
+  
+  // Conta notificações não lidas
+  const unreadCount = notifications.filter(n => !n.read).length;
+  
+  // Formata a data para exibição
+  const formatTime = (date) => {
+    const now = new Date();
+    const diffInHours = Math.floor((now - date) / (1000 * 60 * 60));
+    
+    if (diffInHours < 1) {
+      return 'Agora mesmo';
+    } else if (diffInHours < 24) {
+      return `Há ${diffInHours}h`;
+    } else if (diffInHours < 48) {
+      return 'Ontem';
+    } else {
+      return `Há ${Math.floor(diffInHours / 24)} dias`;
+    }
+  };
+  
+  // Marca uma notificação como lida
+  const markAsRead = (id) => {
+    setNotifications(notifications.map(notification => 
+      notification.id === id ? { ...notification, read: true } : notification
+    ));
+  };
+  
+  // Marca todas as notificações como lidas
+  const markAllAsRead = () => {
+    setNotifications(notifications.map(notification => ({
+      ...notification,
+      read: true
+    })));
+  };
+  
+  // Alterna a visibilidade do popup de notificações
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
 
   // Simula dados do clima
   const weatherData = {
@@ -116,17 +213,54 @@ export default function MainPage() {
       <Header>
         <Logo>AgroConnect</Logo>
         <HeaderActions>
-          <NotificationButton>
-            <FaBell />
-            {notifications > 0 && (
-              <NotificationBadge>
-                {notifications > 9 ? '9+' : notifications}
-              </NotificationBadge>
-            )}
-          </NotificationButton>
-          <MenuButton>
-            <FaBars />
-          </MenuButton>
+          <div style={{ position: 'relative' }}>
+            <NotificationButton onClick={toggleNotifications}>
+              <FaBell />
+              {unreadCount > 0 && (
+                <NotificationBadge>
+                  {unreadCount > 9 ? '9+' : unreadCount}
+                </NotificationBadge>
+              )}
+            </NotificationButton>
+            
+            <NotificationPopup $isOpen={showNotifications}>
+              <NotificationHeader>
+                <NotificationTitle>Notificações</NotificationTitle>
+                {unreadCount > 0 && (
+                  <MarkAllRead onClick={markAllAsRead}>
+                    Marcar todas como lidas
+                  </MarkAllRead>
+                )}
+              </NotificationHeader>
+              
+              <NotificationList>
+                {notifications.map(notification => (
+                  <NotificationItem 
+                    key={notification.id}
+                    $unread={!notification.read}
+                  >
+                    <NotificationContent>
+                      <strong>{notification.title}</strong>
+                      <p style={{ margin: '4px 0 0 0' }}>{notification.message}</p>
+                      <NotificationTime>
+                        {formatTime(notification.time)}
+                      </NotificationTime>
+                    </NotificationContent>
+                    {!notification.read && (
+                      <NotificationActions>
+                        <MarkAsReadButton onClick={(e) => {
+                          e.stopPropagation();
+                          markAsRead(notification.id);
+                        }}>
+                          Marcar como lida
+                        </MarkAsReadButton>
+                      </NotificationActions>
+                    )}
+                  </NotificationItem>
+                ))}
+              </NotificationList>
+            </NotificationPopup>
+          </div>
         </HeaderActions>
       </Header>
 
@@ -208,24 +342,6 @@ export default function MainPage() {
         </Button>
       </NewsSection>
 
-      {/* Rodapé */}
-      <Footer>
-        <FooterLinks>
-          <a href="/sobre-nos">Sobre Nós</a>
-          <a href="/ajuda">Ajuda</a>
-          <a href="/contato">Contato</a>
-          <a href="/configuracoes">Configurações</a>
-        </FooterLinks>
-        <div>
-          <FaGlobeAmericas />
-          <select style={{ marginLeft: '0.5rem', border: 'none', background: 'none' }}>
-            <option>Português</option>
-            <option>English</option>
-            <option>Español</option>
-          </select>
-        </div>
-      </Footer>
-      
       {/* Botão Flutuante de Ajuda */}
       <FloatingActionButton 
         onClick={() => navigate('/fale-com-especialista')}
@@ -250,6 +366,8 @@ export default function MainPage() {
           </div>
         )}
       </FloatingActionButton>
+      
+      <Footer />
     </MainContainer>
   );
 }

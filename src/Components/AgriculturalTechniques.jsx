@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaSearch, FaFilter, FaLeaf, FaTint, FaBug, FaSeedling, FaCloudSunRain, FaCertificate } from 'react-icons/fa';
 import { GiFarmer, GiCorn, GiWheat } from 'react-icons/gi';
+import Footer from './Footer';
 import { 
   Container, 
   Header, 
@@ -21,7 +22,6 @@ import {
   FaqSection,
   FaqItem,
   ViewMoreButton,
-  Footer
 } from '../Styles/StyledAgriculturalTechniques';
 
 const AgriculturalTechniques = () => {
@@ -123,9 +123,6 @@ const AgriculturalTechniques = () => {
             <FaSearch /> Buscar
           </button>
         </SearchBar>
-        <button>
-          <FaFilter /> Filtros
-        </button>
       </SearchSection>
 
       {/* Recommended Techniques */}
@@ -177,14 +174,8 @@ const AgriculturalTechniques = () => {
           Ver Mais Artigos/FAQ <span>→</span>
         </ViewMoreButton>
       </FaqSection>
-
-      {/* Footer */}
-      <Footer>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Ajuda</a>
-        <a href="#">Contato</a>
-        <a href="#">Configurações</a>
-      </Footer>
+      
+      <Footer />
     </Container>
   );
 };

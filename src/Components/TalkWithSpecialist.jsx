@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaCommentAlt, FaPhoneAlt, FaVideo, FaQuestionCircle } from 'react-icons/fa';
+import Footer from './Footer';
 import { 
   PageContainer, Header, BackButton, Logo, Title, WelcomeSection, 
   SectionTitle, Description, OptionsGrid, OptionCard, OptionIcon, 
   OptionTitle, OptionDescription, PrimaryButton, ThemeSection, 
-  ThemeSelect, InfoSection, InfoTitle, InfoText, Footer, FooterLink 
+  ThemeSelect, InfoSection, InfoTitle, InfoText
 } from '../Styles/StyledTalkWithSpecialist';
+
+import Footer from './Footer';
 
 const TalkWithSpecialist = () => {
   const navigate = useNavigate();
@@ -140,12 +143,7 @@ const TalkWithSpecialist = () => {
         </InfoText>
       </InfoSection>
 
-      <Footer>
-        <FooterLink href="/sobre">Sobre Nós</FooterLink>
-        <FooterLink href="/ajuda">Ajuda</FooterLink>
-        <FooterLink href="/contato">Contato</FooterLink>
-        <FooterLink href="/configuracoes">Configurações</FooterLink>
-      </Footer>
+      <Footer />
     </PageContainer>
   );
 };

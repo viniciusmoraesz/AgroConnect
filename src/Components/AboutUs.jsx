@@ -21,9 +21,7 @@ import {
   CtaText,
   ButtonGroup,
   PrimaryButton,
-  SecondaryButton,
-  Footer,
-  FooterLinks
+  SecondaryButton
 } from '../Styles/StyledAboutUs';
 
 const AboutUs = () => {
@@ -122,30 +120,18 @@ const AboutUs = () => {
       </Section>
 
       <CtaSection>
-        <CtaTitle>Pronto para transformar sua produção com mais segurança e conhecimento?</CtaTitle>
+        <CtaTitle>Sua Opinião Ajuda a Construir o AgroConnect!</CtaTitle>
         <CtaText>
-          Junte-se à comunidade AgroConnect e descubra como podemos ajudar você a enfrentar os desafios climáticos e a colher melhores resultados!
+          Queremos que o AgroConnect seja cada vez melhor para você. Sua experiência é fundamental para aprimorarmos nossas ferramentas e suporte.
         </CtaText>
         
         <ButtonGroup>
-          <PrimaryButton onClick={() => navigate('/cadastro')}>
-            Cadastre-se Grátis Agora
+          <PrimaryButton onClick={() => navigate('/fale-com-especialista')}>
+            Deixar um Feedback
           </PrimaryButton>
-          <SecondaryButton onClick={() => navigate('/funcionalidades')}>
-            Explore as Funcionalidades
-          </SecondaryButton>
         </ButtonGroup>
       </CtaSection>
 
-      <Footer>
-        <FooterLinks>
-          <a href="/ajuda">Ajuda</a>
-          <a href="/contato">Contato</a>
-          <a href="/termos">Termos de Uso</a>
-          <a href="/privacidade">Política de Privacidade</a>
-        </FooterLinks>
-        <p> {new Date().getFullYear()} AgroConnect. Todos os direitos reservados.</p>
-      </Footer>
     </AboutContainer>
   );
 };

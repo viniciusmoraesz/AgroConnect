@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaExclamationTriangle, FaPhone, FaVideo, FaQuestionCircle } from 'react-icons/fa';
+import Footer from './Footer';
 import {
   Container,
   Header,
@@ -19,7 +20,6 @@ import {
   CrisisCard,
   ActionButton,
   WarningBox,
-  Footer,
   ContactInfo
 } from '../Styles/StyledCrisisActionPlan';
 
@@ -251,12 +251,6 @@ const CrisisActionPlan = () => {
           </ul>
         </ContactInfo>
 
-        <Footer>
-          <a href="#">Sobre Nós</a>
-          <a href="#">Ajuda</a>
-          <a href="#">Contato</a>
-          <a href="#">Configurações</a>
-        </Footer>
       </Container>
     );
   }
@@ -301,16 +295,10 @@ const CrisisActionPlan = () => {
           <li><FaQuestionCircle /> <a href="#">Perguntas Frequentes</a></li>
         </ul>
       </ContactInfo>
-
-      <Footer>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Ajuda</a>
-        <a href="#">Contato</a>
-        <a href="#">Configurações</a>
-      </Footer>
+      
+      <Footer />
     </Container>
   );
 };
 
 export default CrisisActionPlan;
-

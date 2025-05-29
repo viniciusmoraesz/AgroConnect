@@ -46,6 +46,102 @@ export const NotificationButton = styled.button`
   }
 `;
 
+export const NotificationPopup = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 320px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+  display: ${props => props.$isOpen ? 'block' : 'none'};
+`;
+
+export const NotificationHeader = styled.div`
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
+export const NotificationTitle = styled.h3`
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+`;
+
+export const MarkAllRead = styled.button`
+  background: none;
+  border: none;
+  color: #2E8B57;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(46, 139, 87, 0.1);
+  }
+`;
+
+export const NotificationList = styled.div`
+  padding: 0;
+`;
+
+export const NotificationItem = styled.div`
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  background: ${props => props.$unread ? '#f8f9ff' : 'transparent'};
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &:hover {
+    background: #f8f9fa;
+  }
+`;
+
+export const NotificationContent = styled.div`
+  flex: 1;
+`;
+
+export const NotificationTime = styled.small`
+  display: block;
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 4px;
+`;
+
+export const NotificationActions = styled.div`
+  margin-left: 8px;
+`;
+
+export const MarkAsReadButton = styled.button`
+  background: none;
+  border: none;
+  color: #2E8B57;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(46, 139, 87, 0.1);
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
@@ -227,7 +323,10 @@ export const HeaderActions = styled.div`
 `;
 
 export const NotificationBadge = styled.span`
-  background-color: #ff4d4f;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff4444;
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -236,10 +335,11 @@ export const NotificationBadge = styled.span`
   align-items: center;
   justify-content: center;
   font-size: 0.7rem;
-  position: absolute;
-  top: 0;
-  right: 0;
+  font-weight: bold;
+  pointer-events: none;
 `;
+
+
 
 /* Welcome Section */
 export const WelcomeSection = styled.section`
