@@ -145,7 +145,7 @@ export default function MainPage() {
           </WeatherDetails>
         </WeatherInfo>
         <Button onClick={() => navigate('/previsao-detalhada')}>
-          Ver Previsão Detalhada
+          Dica Rápida do Dia
         </Button>
       </WelcomeSection>
 
@@ -187,10 +187,6 @@ export default function MainPage() {
           <li><strong>Ação:</strong> Saiba exatamente o que fazer com planos de crise detalhados.</li>
           <li><strong>Prevenção:</strong> Monitore riscos e adote as melhores técnicas agrícolas.</li>
         </ul>
-        
-        <Button onClick={() => navigate('/monitoramento-riscos')}>
-          <FaShieldAlt /> Começar a Proteger sua Lavoura
-        </Button>
       </ResilienceSection>
 
       {/* Notícias e Dicas */}
@@ -215,7 +211,7 @@ export default function MainPage() {
       {/* Rodapé */}
       <Footer>
         <FooterLinks>
-          <a href="/sobre">Sobre Nós</a>
+          <a href="/sobre-nos">Sobre Nós</a>
           <a href="/ajuda">Ajuda</a>
           <a href="/contato">Contato</a>
           <a href="/configuracoes">Configurações</a>

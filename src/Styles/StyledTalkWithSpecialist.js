@@ -71,6 +71,9 @@ export const OptionCard = styled.div`
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   
   &:hover {
     transform: translateY(-5px);
@@ -94,6 +97,7 @@ export const OptionDescription = styled.p`
   color: #666;
   margin-bottom: 1.5rem;
   line-height: 1.5;
+  flex-grow: 1;
 `;
 
 export const PrimaryButton = styled.button`

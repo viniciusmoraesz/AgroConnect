@@ -52,7 +52,7 @@ const TalkWithSpecialist = () => {
         <BackButton onClick={handleBack}>
           <FaArrowLeft />
         </BackButton>
-        <Logo src="/logo.png" alt="AgroConnect" />
+        <Logo src="/logo_header.png" alt="AgroConnect" />
         <Title>Fale com o Especialista</Title>
       </Header>
 
