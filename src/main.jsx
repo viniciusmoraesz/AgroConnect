@@ -5,23 +5,29 @@ import GlobalStyle from './GlobalStyled';
 import App from './App';
 import LoginPage from './Components/LoginPage';
 import RegisterPage from './Components/RegisterPage';
-import AgricultureDashboard from './Components/AgricultorDashboard';
+import AgricultorDashboard from './Components/AgricultorDashboard';
 import ExpertDashboard from './Components/EspecialistaDashboard';
 import FAQPage from './Components/FAQPage';
 import ContactPage from './Components/ContactPage';
 import MainPage from './Components/MainPage';
 
+// Importar a fonte Poppins
+const link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
+
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<LoginPage />} />
-        <Route path="contato" element={<ContactPage />} />
-        <Route path="registro-usuario" element={<RegisterPage />} />
-        <Route path="agricultor-dashboard" element={<AgricultureDashboard />} />
-        <Route path="especialista-dashboard" element={<ExpertDashboard />} />
-        <Route path="faq" element={<FAQPage />} />
-        <Route path="main-page" element={<MainPage />} />
+      <Route path="/" element={<App/>}>
+        <Route index element={<LoginPage/>} />
+        <Route path="contato" element={<ContactPage/>} />
+        <Route path="registro-usuario" element={<RegisterPage/>} />
+        <Route path="agricultor-dashboard" element={<AgricultorDashboard/>} />
+        <Route path="especialista-dashboard" element={<ExpertDashboard/>} />
+        <Route path="faq" element={<FAQPage/>} />
+        <Route path="main-page" element={<MainPage/>} />
       </Route>
     </Routes>
   );
