@@ -186,7 +186,7 @@ const CrisisActionPlan = () => {
   };
 
   const handleBackToHome = () => {
-    navigate('/');
+    navigate('/home');
   };
 
   if (!showCrisisList && selectedCrisis) {

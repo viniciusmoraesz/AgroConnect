@@ -200,7 +200,7 @@ const RiskMonitoring = () => {
   };
 
   const handleBackToHome = () => {
-    navigate('/');
+    navigate('/home');
   };
 
   if (!showRiskList && selectedRisk) {

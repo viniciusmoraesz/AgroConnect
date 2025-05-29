@@ -434,18 +434,108 @@ export const Footer = styled.footer`
   color: #666;
 `;
 
-export const FooterLinks = styled.nav`
+export const FooterLinks = styled.div`
   display: flex;
   gap: 1.5rem;
-
+  margin-top: 1rem;
+  
   a {
-    color: #666;
+    color: #2E8B57;
     text-decoration: none;
-    transition: color 0.2s ease;
-
+    font-size: 0.9rem;
+    
     &:hover {
-      color: #2E8B57;
       text-decoration: underline;
+    }
+  }
+`;
+
+export const FloatingActionButton = styled.button`
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2E8B57;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #1f6d3d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
+export const ResilienceSection = styled.section`
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  
+  h3 {
+    color: #2E8B57;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  p {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  ul {
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.75rem;
+    line-height: 1.5;
+    
+    &::before {
+      content: '✓';
+      color: #2E8B57;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.1em;
+    }
+  }
+  
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    @media (min-width: 768px) {
+      width: auto;
+      min-width: 280px;
     }
   }
 `;

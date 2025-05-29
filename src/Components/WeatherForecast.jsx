@@ -20,6 +20,9 @@ import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy, WiDaySunnyOvercast, WiNightC
 
 const WeatherForecast = () => {
   const navigate = useNavigate();
+  const handleBackToHome = () => {
+    navigate('/main-page');
+  };
   const [selectedDay, setSelectedDay] = useState(0);
 
   // Mock data - in a real app, this would come from an API
@@ -95,7 +98,7 @@ const WeatherForecast = () => {
     <WeatherContainer>
       {/* Header */}
       <Header>
-        <BackButton onClick={() => navigate(-1)}>
+        <BackButton onClick={() => navigate('/home')}>
           <FaArrowLeft />
         </BackButton>
         <h1>Previsão Detalhada</h1>
