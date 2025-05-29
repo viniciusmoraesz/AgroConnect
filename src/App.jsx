@@ -10,7 +10,9 @@ function App() {
       fontFamily: "'Poppins', sans-serif"
     }}>
       <Header />
-      <Outlet />
+      <div style={{ marginTop: '6rem'}}>
+        <Outlet />
+      </div>
     </div>
   );
 }
