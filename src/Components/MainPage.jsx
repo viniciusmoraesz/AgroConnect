@@ -22,10 +22,12 @@ import {
   NewsSection,
   NewsItem,
   NewsTitle,
+  ResilienceSection,
   Button,
   OutlineButton,
   Footer,
-  FooterLinks
+  FooterLinks,
+  FloatingActionButton
 } from '../Styles/StyledMainPage';
 
 import { 
@@ -40,7 +42,8 @@ import {
   FaGlobeAmericas,
   FaCog,
   FaQuestionCircle,
-  FaEnvelope
+  FaEnvelope,
+  FaShieldAlt
 } from 'react-icons/fa';
 import { WiDaySunny, WiRain, WiCloudy } from 'react-icons/wi';
 
@@ -83,6 +86,7 @@ const news = [
 export default function MainPage() {
   const navigate = useNavigate();
   const [notifications] = useState(3); // Simula notificações não lidas
+  const [showTooltip, setShowTooltip] = useState(false);
 
   // Simula dados do clima
   const weatherData = {
@@ -172,6 +176,23 @@ export default function MainPage() {
         </QuickActionsGrid>
       </QuickActions>
 
+      {/* Seção de Resiliência */}
+      <ResilienceSection>
+        <h3><FaShieldAlt /> Construa sua Resiliência Agora</h3>
+        <p><strong>Sua Lavoura Mais Segura e Produtiva!</strong></p>
+        <p>Com o AgroConnect, você tem as ferramentas para se preparar e proteger sua lavoura dos desafios climáticos.</p>
+        
+        <ul>
+          <li><strong>Alerta:</strong> Receba avisos precisos e em tempo real.</li>
+          <li><strong>Ação:</strong> Saiba exatamente o que fazer com planos de crise detalhados.</li>
+          <li><strong>Prevenção:</strong> Monitore riscos e adote as melhores técnicas agrícolas.</li>
+        </ul>
+        
+        <Button onClick={() => navigate('/monitoramento-riscos')}>
+          <FaShieldAlt /> Começar a Proteger sua Lavoura
+        </Button>
+      </ResilienceSection>
+
       {/* Notícias e Dicas */}
       <NewsSection>
         <h3>Notícias e Dicas</h3>
@@ -208,6 +229,31 @@ export default function MainPage() {
           </select>
         </div>
       </Footer>
+      
+      {/* Botão Flutuante de Ajuda */}
+      <FloatingActionButton 
+        onClick={() => navigate('/fale-com-especialista')}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        aria-label="Fale com Especialista"
+      >
+        <FaQuestionCircle />
+        {showTooltip && (
+          <div style={{
+            position: 'absolute',
+            right: '70px',
+            backgroundColor: '#2E8B57',
+            color: 'white',
+            padding: '8px 12px',
+            borderRadius: '4px',
+            fontSize: '14px',
+            whiteSpace: 'nowrap',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+          }}>
+            Fale com Especialista
+          </div>
+        )}
+      </FloatingActionButton>
     </MainContainer>
   );
 }

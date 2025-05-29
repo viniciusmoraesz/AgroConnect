@@ -14,6 +14,8 @@ import WeatherForecast from './Components/WeatherForecast';
 import AgriculturalTechniques from './Components/AgriculturalTechniques';
 import CrisisActionPlan from './Components/CrisisActionPlan';
 import RiskMonitoring from './Components/RiskMonitoring';
+import AboutUs from './Components/AboutUs';
+import TalkWithSpecialist from './Components/TalkWithSpecialist';
 
 // Importar a fonte Poppins
 const link = document.createElement('link');
@@ -36,6 +38,8 @@ const AppRouter = () => {
         <Route path="tecnicas-agricolas" element={<AgriculturalTechniques/>} />
         <Route path="plano-crise" element={<CrisisActionPlan/>} />
         <Route path="monitoramento-riscos" element={<RiskMonitoring/>} />
+        <Route path="sobre-nos" element={<AboutUs/>} />
+        <Route path="fale-com-especialista" element={<TalkWithSpecialist/>} />
       </Route>
     </Routes>
   );
