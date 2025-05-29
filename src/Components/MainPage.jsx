@@ -49,6 +49,7 @@ import {
   FaLeaf, 
   FaExclamationTriangle,
   FaChartLine,
+  FaHandHoldingHeart,
   FaGlobeAmericas,
   FaCog,
   FaQuestionCircle,
@@ -144,6 +145,7 @@ export default function MainPage() {
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showDonationTooltip, setShowDonationTooltip] = useState(false);
   const [notifications, setNotifications] = useState(sampleNotifications);
   
   // Conta notificações não lidas
@@ -342,12 +344,48 @@ export default function MainPage() {
         </Button>
       </NewsSection>
 
+      {/* Botão Flutuante de Doações */}
+      <FloatingActionButton 
+        onClick={() => navigate('/doacoes')}
+        onMouseEnter={() => setShowDonationTooltip(true)}
+        onMouseLeave={() => setShowDonationTooltip(false)}
+        aria-label="Faça uma doação"
+        style={{ 
+          backgroundColor: '#32BCAD',
+          bottom: '160px',
+          right: '20px',
+          position: 'fixed'
+        }}
+      >
+        <FaHandHoldingHeart />
+        {showDonationTooltip && (
+          <div style={{
+            position: 'absolute',
+            right: '70px',
+            backgroundColor: '#32BCAD',
+            color: 'white',
+            padding: '8px 12px',
+            borderRadius: '4px',
+            fontSize: '14px',
+            whiteSpace: 'nowrap',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+          }}>
+            Faça uma doação
+          </div>
+        )}
+      </FloatingActionButton>
+
       {/* Botão Flutuante de Ajuda */}
       <FloatingActionButton 
         onClick={() => navigate('/fale-com-especialista')}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
         aria-label="Fale com Especialista"
+        style={{ 
+          bottom: '80px',
+          right: '20px',
+          position: 'fixed'
+        }}
       >
         <FaQuestionCircle />
         {showTooltip && (

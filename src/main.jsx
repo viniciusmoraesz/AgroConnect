@@ -16,6 +16,7 @@ import CrisisActionPlan from './Components/CrisisActionPlan';
 import RiskMonitoring from './Components/RiskMonitoring';
 import AboutUs from './Components/AboutUs';
 import TalkWithSpecialist from './Components/TalkWithSpecialist';
+import Donations from './Components/Donations';
 
 // Importar a fonte Poppins
 const link = document.createElement('link');
@@ -40,6 +41,7 @@ const AppRouter = () => {
         <Route path="monitoramento-riscos" element={<RiskMonitoring/>} />
         <Route path="sobre-nos" element={<AboutUs/>} />
         <Route path="fale-com-especialista" element={<TalkWithSpecialist/>} />
+        <Route path="doacoes" element={<Donations/>} />
       </Route>
     </Routes>
   );
