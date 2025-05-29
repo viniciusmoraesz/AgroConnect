@@ -9,8 +9,6 @@ import {
   ThemeSelect, InfoSection, InfoTitle, InfoText
 } from '../Styles/StyledTalkWithSpecialist';
 
-import Footer from './Footer';
-
 const TalkWithSpecialist = () => {
   const navigate = useNavigate();
   const location = useLocation();
