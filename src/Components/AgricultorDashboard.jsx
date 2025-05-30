@@ -78,7 +78,7 @@ export default function AgricultorDashboard() {
       id: 1,
       title: 'Preparo do Solo',
       description: 'Técnicas de cobertura e plantio direto para melhorar a retenção de água.',
-      link: '/tecnicas/solo'
+      link: '#'
     },
     {
       id: 2,
@@ -89,10 +89,10 @@ export default function AgricultorDashboard() {
   ];
 
   const tools = [
-    { id: 1, icon: <FaChartLine />, label: 'Plano de Ação de Crise', link: '/plano-crise' },
-    { id: 2, icon: <FaSeedling />, label: 'Técnicas Agrícolas', link: '/tecnicas-agricolas' },
-    { id: 3, icon: <FaWater />, label: 'Monitoramento de Irrigação', link: '/irrigacao' },
-    { id: 4, icon: <FaTools />, label: 'Ferramentas de Gestão', link: '/ferramentas' }
+    { id: 1, icon: <FaChartLine />, label: 'Plano de Ação de Crise', link: '#' },
+    { id: 2, icon: <FaSeedling />, label: 'Técnicas Agrícolas', link: '#' },
+    { id: 3, icon: <FaWater />, label: 'Monitoramento de Irrigação', link: '#' },
+    { id: 4, icon: <FaTools />, label: 'Ferramentas de Gestão', link: '#' }
   ];
 
   const news = [
@@ -143,13 +143,13 @@ export default function AgricultorDashboard() {
           </p>
           <div className="actions">
             <Button 
-              to={`/plano-crise/${activeAlert.actionPlan}`} 
+              onClick={(e) => e.preventDefault()}
               className="btn-primary"
             >
               Acessar Plano de Ação para {activeAlert.type}
             </Button>
             <Button 
-              to="/alertas/detalhes" 
+              onClick={(e) => e.preventDefault()}
               className="btn-outline"
               severity={activeAlert.severity}
             >
@@ -169,12 +169,19 @@ export default function AgricultorDashboard() {
               <span className="risk-level">{risk.level}</span>
             </div>
             <p className="risk-reason">{risk.reason}</p>
-            <Link to={`/riscos/${risk.id}`} className="risk-action">
+            <Link 
+              onClick={(e) => e.preventDefault()}
+              className="risk-action"
+            >
               Ver detalhes e prevenção <FaArrowRight size={10} />
             </Link>
           </RiskItem>
         ))}
-        <Button to="/monitoramento-riscos" className="btn-outline" style={{ marginTop: '15px' }}>
+        <Button 
+          onClick={(e) => e.preventDefault()}
+          className="btn-outline" 
+          style={{ marginTop: '15px' }}
+        >
           Ver Todos os Riscos da Minha Região
         </Button>
       </RiskCard>
@@ -185,7 +192,10 @@ export default function AgricultorDashboard() {
           <SuggestionItem key={suggestion.id}>
             <div className="suggestion-title">[{suggestion.title}]</div>
             <p className="suggestion-desc">{suggestion.description}</p>
-            <Link to={suggestion.link} className="suggestion-link">
+            <Link 
+              onClick={(e) => e.preventDefault()}
+              className="suggestion-link"
+            >
               Saiba mais <FaArrowRight size={10} />
             </Link>
           </SuggestionItem>
@@ -213,7 +223,11 @@ export default function AgricultorDashboard() {
             <p className="news-excerpt">{item.excerpt}</p>
           </NewsItem>
         ))}
-        <Button to="/noticias" className="btn-outline" style={{ marginTop: '15px' }}>
+        <Button 
+          onClick={(e) => e.preventDefault()}
+          className="btn-outline" 
+          style={{ marginTop: '15px' }}
+        >
           Ver Mais Notícias
         </Button>
       </NewsCard>

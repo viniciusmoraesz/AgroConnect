@@ -291,7 +291,7 @@ export default function MainPage() {
           <FaBell /> ALERTA IMPORTANTE!
         </AlertTitle>
         <p>Risco de Geada na Região Sul nas Próximas 24h.</p>
-        <OutlineButton onClick={() => navigate('/alerta-geada')}>
+        <OutlineButton onClick={() => navigate('/home')}>
           Saiba como proteger sua lavoura
         </OutlineButton>
       </AlertSection>
@@ -337,7 +337,10 @@ export default function MainPage() {
         ))}
         <Button 
           variant="outline" 
-          onClick={() => navigate('/noticias')}
+          onClick={(e) => {
+            e.preventDefault();
+            // Prevent navigation to /noticias
+          }}
           style={{ marginTop: '1rem' }}
         >
           Ver todas as Notícias/Dicas
