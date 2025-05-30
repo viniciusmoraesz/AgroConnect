@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { RegisterContainer, RegisterCard, RegisterTitle, HelperText, Form, Input, Select, ErrorText, SubmitButton, CheckboxContainer, Checkbox, CheckboxLabel, PasswordRequirements, TogglePassword, Requirement, SuccessModal, SuccessModalContent } from '../Styles/StyledRegisterPage';
+import { RegisterContainer, RegisterCard, RegisterTitle, HelperText, Form, Input, Select, LinkText, ErrorText, SubmitButton, CheckboxContainer, Checkbox, CheckboxLabel, PasswordRequirements, TogglePassword, Requirement, SuccessModal, SuccessModalContent } from '../Styles/StyledRegisterPage';
 import axios from 'axios';
 
 const API_URL = 'https://viacep.com.br/ws/';
@@ -322,6 +322,10 @@ export default function RegisterPage() {
             {isSubmitting ? 'Registrando...' : 'Registrar'}
           </SubmitButton>
         </Form>
+        <LinkText>
+          Já tem uma conta no site?{' '}
+          <a href="/">Clique aqui e faça login.</a>
+        </LinkText>
       </RegisterCard>
 
       {showSuccessModal && (

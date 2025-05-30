@@ -204,3 +204,19 @@ export const TogglePassword = styled.button`
   }
 `;
 
+export const LinkText = styled.p`
+  text-align: center;
+  margin-top: 20px;
+  color: #2E8B57;
+  font-size: 0.875rem;
+
+  a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
