@@ -37,8 +37,8 @@ const ContactPage = () => {
     <ContactContainer>
       <ContactContent>
         <TitleSection>
-          <h1>Fale com Nossos Especialistas</h1>
-          <p>Conecte-se com a AgroConnect e obtenha orientação personalizada para sua propriedade</p>
+          <h1>Fale Conosco</h1>
+          <p>Estamos aqui para ajudar! Preencha o formulário abaixo para entrar em contato com nossa equipe.</p>
         </TitleSection>
 
         <FormSection>
