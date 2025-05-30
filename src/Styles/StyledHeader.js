@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #7CFC00;
+  background: linear-gradient(135deg, #2E8B57 0%, #7CFC00 100%);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -70,7 +70,7 @@ export const MobileMenu = styled.div`
   top: 100%;
   left: 0;
   right: 0;
-  background-color: #7CFC00;
+  background: linear-gradient(135deg, #2E8B57 0%, #7CFC00 100%);
   padding: 1rem;
   flex-direction: column;
   gap: 1rem;
