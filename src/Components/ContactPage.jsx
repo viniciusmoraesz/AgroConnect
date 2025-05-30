@@ -27,6 +27,12 @@ const ContactPage = () => {
     console.log('Form submitted:', formData);
   };
 
+  // Desativa a funcionalidade de clique nos ícones de redes sociais
+  const handleSocialClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <ContactContainer>
       <ContactContent>
@@ -179,13 +185,13 @@ const ContactPage = () => {
           </ContactItem>
 
           <SocialLinks>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick} style={{ cursor: 'default' }}>
               <FaLinkedin />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick} style={{ cursor: 'default' }}>
               <FaInstagram />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick} style={{ cursor: 'default' }}>
               <FaFacebook />
             </a>
           </SocialLinks>
