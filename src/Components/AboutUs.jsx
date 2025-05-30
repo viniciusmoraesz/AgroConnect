@@ -126,7 +126,7 @@ const AboutUs = () => {
         </CtaText>
         
         <ButtonGroup>
-          <PrimaryButton onClick={() => navigate('/fale-com-especialista')}>
+          <PrimaryButton onClick={() => navigate('/feedback')}>
             Deixar um Feedback
           </PrimaryButton>
         </ButtonGroup>

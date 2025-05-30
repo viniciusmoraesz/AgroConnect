@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalStyle from './GlobalStyled';
 import App from './App';
+import FAQPage from './Components/FAQPage';
 import LoginPage from './Components/LoginPage';
 import RegisterPage from './Components/RegisterPage';
 import AgricultorDashboard from './Components/AgricultorDashboard';
 import ExpertDashboard from './Components/EspecialistaDashboard';
-import FAQPage from './Components/FAQPage';
+import Feedback from './Components/Feedback';
 import ContactPage from './Components/ContactPage';
 import MainPage from './Components/MainPage';
 import WeatherForecast from './Components/WeatherForecast';
@@ -34,6 +35,7 @@ const AppRouter = () => {
         <Route path="agricultor-dashboard" element={<AgricultorDashboard/>} />
         <Route path="especialista-dashboard" element={<ExpertDashboard/>} />
         <Route path="faq" element={<FAQPage/>} />
+        <Route path="feedback" element={<Feedback/>} />
         <Route path="home" element={<MainPage/>} />
         <Route path="previsao-tempo" element={<WeatherForecast/>} />
         <Route path="tecnicas-agricolas" element={<AgriculturalTechniques/>} />
